@@ -1,0 +1,17 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './css/bike.css';
+
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+
+  .mat-container .mat-form-field-underline {
+    display: none;
+  }

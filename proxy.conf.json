@@ -1,0 +1,11 @@
+{
+	"/server": {
+		"target": "https://desolate-shelf-59896.herokuapp.com",
+		"secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/server" : ""
+    }
+	}
+}

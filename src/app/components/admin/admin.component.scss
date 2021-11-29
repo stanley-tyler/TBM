@@ -1,0 +1,38 @@
+
+.flex-container {
+    display: flex;   
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.flex-child.auto {
+    padding-left: 10px;
+    flex: 1;
+}
+.flex-child.refresh {
+    flex: 4;
+}
+.flex-child.table {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex: 1;
+}
+
+// @media all and (max-width: 800px) {
+//     .navigation {
+//       /* When on medium sized screens, we center it by evenly distributing empty space around items */
+//       justify-content: space-around;
+//     }
+//   }
+
+
+//   @media all and (max-width: 500px) {
+//     .navigation {
+//       /* On small screens, we are no longer using row direction but column */
+//       flex-direction: column;
+//     }
+//   }
+
+
+

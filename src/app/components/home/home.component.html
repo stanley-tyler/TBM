@@ -1,0 +1,113 @@
+
+<div class="container"> 
+  <h1 style="font-size: 20px; padding-top: 10px;">Fill out the form to get more information</h1>
+    <form [formGroup]="bikeForm" #formDirective="ngForm" (ngSubmit)="submitRegistration(formDirective)" novalidate>
+      <div *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+      <div class="flex-container">
+      <div class="flex-child">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input type="name" matInput formControlName="name" [errorStateMatcher]="matcher"
+               placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="bikeForm.controls['name'].hasError('name') && !bikeForm.controls['name'].hasError('required')">
+          Please enter a valid name
+        </mat-error>
+        <mat-error *ngIf="bikeForm.controls['name'].hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      </div>
+      <div class="flex-child">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+               placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="bikeForm.controls['email'].hasError('email') && !bikeForm.controls['email'].hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="bikeForm.controls['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      </div>
+      </div> 
+      <div class="flex-container">
+        <div class="flex-child">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input type="phone" matInput formControlName="phone" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="bikeForm.controls['phone'].hasError('phone') && !bikeForm.controls['phone'].hasError('required')">
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error *ngIf="bikeForm.controls['phone'].hasError('required')">
+            Phone number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="flex-child">
+        <mat-form-field ngbDropdown class="example-full-width" appearance="outline">
+          <mat-label>Model</mat-label>
+          <input type="model" id="dropdownBasic1" ngbDropdownToggle aria-labelledby="dropdownBasic1" matInput formControlName="model" [errorStateMatcher]="matcher"
+          autocomplete="off"
+                 placeholder="Ex. pat@example.com">
+                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                   <ng-container *ngFor="let model of models">
+                    <button type="button" ngbDropdownItem (click)="bikeForm!.get('model')!.setValue(model)">{{model}}</button>
+                   </ng-container>
+                </div>
+          <mat-error *ngIf="bikeForm.controls['model'].hasError('model') && !bikeForm.controls['model'].hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="bikeForm.controls['model'].hasError('required')">
+            Model is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+      </div>   
+      <div class="flex-container">
+        <div class="flex-child">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Serial Number</mat-label>
+          <input type="serialNumber" matInput formControlName="serialNumber" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="bikeForm.controls['serialNumber'].hasError('serialNumber') && !bikeForm.controls['serialNumber'].hasError('required')">
+            Please enter a valid serial number
+          </mat-error>
+          <mat-error *ngIf="bikeForm.controls['serialNumber'].hasError('required')">
+            Serial Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="flex-child">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Purchase Price</mat-label>
+          <input type="purchasePrice" matInput formControlName="purchasePrice" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="bikeForm.controls['purchasePrice'].hasError('purchasePrice') && !bikeForm.controls['purchasePrice'].hasError('required')">
+            Please enter a valid purchase price
+          </mat-error>
+          <mat-error *ngIf="bikeForm.controls['purchasePrice'].hasError('required')">
+            Purchase Price is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+      </div>   
+      <div>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Purchase Date</mat-label>
+          <input type="purchaseDate" matInput ngbDatepicker #d="ngbDatepicker" formControlName="purchaseDate" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com" (click)="d.toggle()" autocomplete="off">
+          <mat-error *ngIf="bikeForm.controls['purchaseDate'].hasError('purchasePrice') && !bikeForm.controls['purchaseDate'].hasError('required')">
+            Please enter a valid date
+          </mat-error>
+          <mat-error *ngIf="bikeForm.controls['purchaseDate'].hasError('required')">
+            Date is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>  
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <a class="btn btn=primary" routerLink="/admin">Back to List</a>
+    </div>
+    <div>
+      <div class="form-group">
+        <label>Buyer Name</label>
+        <div><input value="{{bikeReg.name}}" (keyup)="updateBike($event, 'name')"></div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <div><input value="{{bikeReg.email}}" (keyup)="updateBike($event, 'email')"></div>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <div><input value="{{bikeReg.phone}}" (keyup)="updateBike($event, 'phone')"></div>
+      </div>
+      <div class="form-group">
+        <label>Bike Model</label>
+        <div><input value="{{bikeReg.model}}" (keyup)="updateBike($event, 'model')"></div>
+      </div>
+      <div class="form-group">
+        <label>Bike Serial Number</label>
+        <div><input value="{{bikeReg.serialNumber}}" (keyup)="updateBike($event, 'serialNumber')"></div>
+      </div>
+      <div class="form-group">
+        <label>Purchase Price</label>
+        <div><input value="{{bikeReg.purchasePrice}}" (keyup)="updateBike($event, 'purchasePrice')" ></div>
+      </div>
+      <div class="form-group">
+        <label>Purchase Date</label>
+        <div><input value="{{bikeReg.purchaseDate}}" (keyup)="updateBike($event, 'purchaseDate')"></div>
+      </div>
+    </div>
+    <button (click)="updateRegistration()">Update</button>
+  </div>
