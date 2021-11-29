@@ -11,7 +11,7 @@ export class AuthService {
     domain: 'dev-974x9edi.us.auth0.com',
     responseType: 'token id_token',
     audience: 'https://desolate-shelf-59896.herokuapp.com',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'https://stanley-tyler.github.io/TBM/callback',
     scope: 'openid view:registration view:registrations'
   });
 
